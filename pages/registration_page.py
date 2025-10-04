@@ -39,7 +39,7 @@ class RegistrationPage:
         self._select_city(user.city)
         self._submit_form()
 
-    def should_have_elements(self, user: User):
+    def should_have_registered_user(self, user: User):
         self.result_table.should(
             have.exact_texts(
                 'Label Values',

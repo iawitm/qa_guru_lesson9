@@ -8,4 +8,4 @@ def test_demo_qa_form(browser_setup):
 
     registration_page.open()
     registration_page.register(student)
-    registration_page.should_have_elements(student)
+    registration_page.should_have_registered_user(student)

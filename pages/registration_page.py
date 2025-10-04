@@ -21,14 +21,14 @@ class RegistrationPage:
     def choose_gender(self, enum_value):
         browser.element(f'[for=gender-radio-{str(enum_value.value)}]').click()
 
-    def fill_mobile(self, mobile):
-        browser.element('#userNumber').type(mobile)
+    def fill_mobile(self, value):
+        browser.element('#userNumber').type(value)
 
-    def fill_date_of_birth(self, birthday):
-        birthday = datetime.strptime(birthday, "%Y-%m-%d")
-        year = str(birthday.year)
-        month = str(birthday.month - 1)
-        day = "0" + str(birthday.day)
+    def fill_date_of_birth(self, value):
+        value = datetime.strptime(value, "%Y-%m-%d")
+        year = str(value.year)
+        month = str(value.month - 1)
+        day = "0" + str(value.day)
 
         browser.element('#dateOfBirthInput').click()
         browser.element('.react-datepicker__year-select').element(f'[value="{year}"]').click()
